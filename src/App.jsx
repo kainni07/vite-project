@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 import { ChildArea } from './ChildArea';
 
 function App() {
@@ -9,13 +9,15 @@ function App() {
   
   const onClickOpen = () => setOpen(!open);
   
+  const onClickClose = useCallback(() => setOpen(false), []);
+  
   return (
     <>
       <input value={text} onChange={onChangeText} />
       <br/>
       <br/>
       <button onClick={onClickOpen}>表示</button>
-      <ChildArea open={open} />
+      <ChildArea open={open} onClickClose={onClickClose} />
     </>
   )
 }
