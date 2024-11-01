@@ -6,6 +6,7 @@ const style = {
   backgroundColor: "khaki",
 }
 
+// メモ関数でコンポーネントをメモ化
 export const ChildArea = memo((props) => {
   const { open, onClickClose } = props;
   

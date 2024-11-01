@@ -9,6 +9,7 @@ function App() {
   
   const onClickOpen = () => setOpen(!open);
   
+  // useCallbackで関数をメモ化
   const onClickClose = useCallback(() => setOpen(false), []);
   
   return (
